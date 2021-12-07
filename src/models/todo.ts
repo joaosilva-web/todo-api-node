@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../instances/pg';
+import { sequelize } from '../instaces/pg';
 
 export interface TodoInstance extends Model {
     id: number;
@@ -7,20 +7,20 @@ export interface TodoInstance extends Model {
     done: boolean;
 }
 
-export const Todo = sequelize.define<TodoInstance>('Todo', {
-    id: {
+export const Todo = sequelize.define<TodoInstance>('Todo',{
+    id: { 
         primaryKey: true,
         autoIncrement: true,
         type: DataTypes.INTEGER
     },
-    title: {
+    title: { 
         type: DataTypes.STRING
     },
-    done: {
+    done: { 
         type: DataTypes.BOOLEAN,
         defaultValue: false
     }
-},{
+}, { 
     tableName: 'todos',
     timestamps: false
 });
